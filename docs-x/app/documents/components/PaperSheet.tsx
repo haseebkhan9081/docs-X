@@ -1,15 +1,9 @@
 "use client";
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { GrDocumentText } from "react-icons/gr";
 import { Document } from '@prisma/client';
 import Image from 'next/image';
 import { Box,Paper } from '@mui/material';
+import { useRouter } from 'next/navigation';
 interface PaperSheetprops {
   document?: Document;
 }
@@ -19,7 +13,12 @@ const PaperSheet: React.FC<PaperSheetprops> = (
     document
   }
 ) => {
+ onst router=useRouter();
+const [isLoading,setIsLoading]=React.useState(false);
+const onClick=()=>{
+setIsLoading(true);
  
+router.push(`/documents/${document?.id}`);
 
   return (
     <>
@@ -51,6 +50,7 @@ const PaperSheet: React.FC<PaperSheetprops> = (
      variant="outlined"
       >
       <div
+        onClick={onClick}
       className='
       flex
       flex-col
