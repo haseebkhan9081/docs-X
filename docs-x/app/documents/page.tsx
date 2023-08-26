@@ -1,5 +1,6 @@
 import getAllDocumentForCurrentUserById from "../actions/getAllDocumentForCurrentUserById";
 import getCurrentUser from "../actions/getCurrentUser";
+import MobileNewDocument from "./components/MobileNewDocument";
 import NavBar from "./components/NavBar";
 import NewDocument from "./components/NewDocument";
 import Recent from "./components/Recent";
@@ -23,7 +24,8 @@ const Documents=async()=>{
         </div>
         <div
         className="
-     
+       hidden
+       md:block
        recent
         w-full
         h-full
@@ -53,6 +55,8 @@ start a new document
         ">
      <Recent documents={documents!}  />
         </div>
+<MobileNewDocument/>
+
         </div></>
 }
 export default Documents;

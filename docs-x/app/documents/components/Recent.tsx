@@ -12,28 +12,20 @@ const Recent:React.FC<Recentprops>
 })=>{
     
     return <>
-    <div
-    className="recent">
+     
     <div 
-    className="
-    
-    p-2
-    text-gray-900
-    font-semibold
-    "
+    className="p-2 font-semibold text-gray-900"
     >
 Recent
     </div>
     <div
-    className="flex
-    flex-row
-    p-4">
+    className="flex flex-row p-4">
 
 <Grid container spacing={1}>
    {documents?.map((doc)=>(
     <Grid 
     key={doc?.id}
-    item sm={3} lg={2} xs={4} md={2}>
+    item sm={3} lg={2} xs={6} md={2}>
   <PaperSheet document={doc}/>
   </Grid>
    ))}
@@ -41,7 +33,7 @@ Recent
    
 </Grid>
     </div>
-    </div>
+     
     
     </>
 }

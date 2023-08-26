@@ -1,6 +1,6 @@
-const io=require('socket.io')(3001,{
+const io=require('socket.io')(5000,{
     cors:{
-        origin:'http://localhost:3000',
+        origin:['http://localhost:3000','https://3000-shiny-credit-78673207.eu-ws2.runcode.io','https://3000-shiny-credit-78673207.eu-ws2.runcode.io/'],
         methods:['GET','POST'],
     }
 })

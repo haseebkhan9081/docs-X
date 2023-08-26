@@ -8,40 +8,17 @@ const NavBar=async()=>{
   const user= await getCurrentUser();
     return <>
    <div
-   className="
-   flex
-   flex-row
-   w-full
-   justify-between
-   items-center
-   border-b-2
-   shadow-lg
-   shadow-black">
+   className="flex flex-row justify-between items-center w-full border-b-2  shadow-black">
    <div
-    className="
-    flex
-    flex-row
-    p-4
-    space-x-2
-    
-    w-full
-    ">
+    className="flex flex-row p-4 space-x-2 w-full">
         <div
-        className="
-        font-medium
-        text-2xl"
+        className="text-2xl font-medium"
         >Docs-X  </div>
         <div><GrDocumentText size={32}/></div>
     </div>
     {/* here is the Avatar */}
     <div
-    className="
-    pr-2
-    flex  
-    flex-col 
-    items-center
-    justify-center
-    ">
+    className="flex flex-col justify-center items-center pr-2">
       
        
         

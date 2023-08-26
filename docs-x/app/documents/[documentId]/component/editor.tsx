@@ -45,7 +45,7 @@ setThumbNailUrl(canvas.toDataURL('image/png'));
 
 
 useEffect(()=>{
-const s=io("http://localhost:3001");
+const s=io("https://server-docs-x.onrender.com");
 console.log("connect from frontEnd");
 setSocket(s);
 return ()=>{
@@ -89,7 +89,7 @@ console.log(response);
      }).catch((error:any)=>{
 console.log(error);
      })
-  },12000);
+  },3000);
   return ()=>{
     clearInterval(interval);
   }
