@@ -1,6 +1,6 @@
 const io=require('socket.io')(3001,{
     cors:{
-        origin:'http://localhost:3000',
+        origin:'https://3001-shiny-credit-78673207.eu-ws2.runcode.io',
         methods:['GET','POST'],
     }
 })
