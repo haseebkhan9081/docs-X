@@ -2,7 +2,8 @@ const io=require('socket.io')(3000,{
     cors:{
         origin:['https://3001-shiny-credit-78673207.eu-ws2.runcode.io',
         'https://3000-shiny-credit-78673207.eu-ws2.runcode.io',
-               'https://5lxdj9-3000.csb.app'],
+               'https://5lxdj9-3000.csb.app',
+               'https://ominous-fishstick-qjr65jq5pxc9rgw-3000.app.github.dev'],
         methods:['GET','POST'],
     }
 })
