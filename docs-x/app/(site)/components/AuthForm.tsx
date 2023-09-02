@@ -4,6 +4,7 @@ import {signIn, useSession} from "next-auth/react";
 import { useEffect, useState } from "react";
 import Button from "./Button";
 import {FcGoogle} from "react-icons/fc";
+import {BsGithub} from "react-icons/bs";
 import toast from "react-hot-toast";
 
 function AuthForm(){
@@ -16,9 +17,9 @@ router.push("/documents");
     }
 },[session.status,router]);
 
-const handleClick=()=>{
+const handleClick=(action:string)=>{
     setIsLoading(true);
-    signIn("google",{
+    signIn(action,{
         redirect:false
 
     }).then((response)=>{
@@ -36,16 +37,29 @@ const handleClick=()=>{
    
 
 return<>
- 
+ <div
+ className="
+ flex
+ flex-col
+ gap-3
+ ">
 <Button
 text="Continue with google"
 Icon={FcGoogle}
 disabled={isLoading}
-onClick={handleClick}
+onClick={()=>{handleClick("google")}}
 primary
 iconSize={30}
 />
- 
+<Button
+text="Continue with github"
+Icon={BsGithub}
+disabled={isLoading}
+onClick={()=>{handleClick("github")}}
+primary
+iconSize={30}
+/>
+</div> 
 </>
 
 }

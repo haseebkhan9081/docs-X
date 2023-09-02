@@ -15,7 +15,8 @@ console.log(body,'this is api/documentid');
 const {
     data,
     id,
-    thumbNail
+    thumbNail,
+    html
 }=body;
   
 
@@ -25,7 +26,8 @@ const existingDocument=await prisma.document.update({
     },
     data:{
         thumbnail:thumbNail,
-         content:data
+         content:data,
+         htmlContent:html,
     }
 });
 

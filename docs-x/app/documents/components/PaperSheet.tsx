@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'; // Correct import
 import { useState } from 'react';
 import {GrDocumentText} from "react-icons/gr"
 import { BsThreeDotsVertical } from 'react-icons/bs';
+import OptionsPopover from './OptionsPopover';
 
 interface PaperSheetprops {
   document?: Document;
@@ -14,6 +15,8 @@ interface PaperSheetprops {
 const PaperSheet: React.FC<PaperSheetprops> = ({ document }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+ 
+
 
   const onClick = () => {
     setIsLoading(true);
@@ -35,29 +38,34 @@ const PaperSheet: React.FC<PaperSheetprops> = ({ document }) => {
       <Paper
         className="flex flex-col 
          justify-between items-center 
-         cursor-wait hover:shadow-xl
-          hover:shadow-gray-500
+           
+         
            hover:cursor-pointer  
            "
         variant="outlined"
       >
-        <div onClick={onClick}
+        <div 
          className="
          flex flex-col  
          justify-between
          w-full
           items-center 
           h-full">
+             
           <div className="
+        
           width-[300px] 
-          height-[150px] overflow-hidden">
+          height-[150px] 
+          overflow-hidden">
             <Image
+            onClick={onClick}
               src={document?.thumbnail || '/images/placeholder.jpg'}
               alt="Image"
-              width={100}
+              width={50}
               height={30}
               layout="responsive"
             />
+          
           </div>
           <div
           className='
@@ -70,7 +78,7 @@ const PaperSheet: React.FC<PaperSheetprops> = ({ document }) => {
           <div className="
           flex 
           flex-row px-2 w-full border-t
-           border-gray-400
+           
            items-center
             space-x-1
             
@@ -83,11 +91,21 @@ const PaperSheet: React.FC<PaperSheetprops> = ({ document }) => {
             ' size={15}/>
             <p className="text-sm
           
-             text-gray-500">{document?.title?.slice(0,10)}</p>
+             text-gray-700">{document?.title?.slice(0,15)}</p>
              
                 </div>
-                <div>
-                  <BsThreeDotsVertical/>
+                <div
+                className='
+                hover:rounded-full
+                hover:ring-[0.5px]
+                hover:ring-sky-300
+                hover:bg-sky-100
+                border-none
+                outline-none
+                '
+                 >
+                  <OptionsPopover
+                  doc={document}/>
                 </div>
                 </div>
         </div>

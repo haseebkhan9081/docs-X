@@ -49,6 +49,7 @@ model Document {
   isEveryOne   Boolean?           @default(false)                  
   ownerId       String            @db.ObjectId
   owner         User             @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  htmlContent   String?
   content    Json
    revisions     Revision[]
    collabUsers collaborator[]

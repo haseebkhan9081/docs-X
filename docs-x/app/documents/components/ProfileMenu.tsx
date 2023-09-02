@@ -24,14 +24,14 @@ import { Tooltip } from '@mui/material';
     let [referenceElement, setReferenceElement] = useState<HTMLElement | null>(null);
     let [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
     let { styles, attributes } = usePopper(referenceElement, popperElement, {
-        placement: 'left-end', // Specify the desired placement
+        placement: 'bottom', // Specify the desired placement
       });
   return (
     <div className="  top-0 
     right-0
     items-center">
       <Popover >
-        {({ open }) => (
+       
           <>
             <Popover.Button
              ref={setReferenceElement}   >
@@ -58,11 +58,8 @@ import { Tooltip } from '@mui/material';
               
               
               className="
-              
-              z-10 
-              pl-10 
-              mt-10
-               left-1
+               z-10 
+              left-1
                     pr-0
                    
                    
@@ -133,7 +130,7 @@ import { Tooltip } from '@mui/material';
               </Popover.Panel>
             </Transition>
           </>
-        )}
+        
       </Popover>
     </div>
   )

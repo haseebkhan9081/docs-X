@@ -43,7 +43,7 @@ const
         .catch((error: any) => {
           console.log(error, 'error from Navbar while saving the title');
         });
-    }, 6000);
+    }, 2000);
   
     // Clear the interval when the component unmounts
     return () => {

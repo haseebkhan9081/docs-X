@@ -26,7 +26,7 @@ const Documents=async()=>{
         className="
        hidden
        md:block
-       recent
+    bg-gray-100
         w-full
         h-full
         ">

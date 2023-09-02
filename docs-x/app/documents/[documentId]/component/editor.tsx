@@ -83,7 +83,7 @@ useEffect(()=>{
     console.log(thumbNailUrl,'this  is the generated url for thumbnail');
 
      axios.post(`/api/document/${doc.id}`,{data:quill?.getContents(),
-      id:doc.id,thumbNail:thumbNailUrl})
+      id:doc.id,thumbNail:thumbNailUrl,html:quill?.root.innerHTML})
      .then((response)=>{
 console.log(response);
      }).catch((error:any)=>{
