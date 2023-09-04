@@ -14,15 +14,18 @@ body,
   margin: 1rem;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
   background-color: white;
+  overflow: hidden;
 }
 
 .container .ql-container.ql-snow {
   border: none;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .container .ql-toolbar.ql-snow {
+  align-items: center;
   display: flex;
   justify-content: center;
   position: sticky;
@@ -31,15 +34,18 @@ body,
   background-color: #F3F3F3;
   border: none;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+  overflow: hidden;
 }
 
 @page {
+  overflow: hidden;
   margin: 1in;
 }
 
 @media print {
   body {
     background: none;
+    overflow: hidden;
   }
 
   .container .ql-editor {
@@ -49,17 +55,13 @@ body,
     margin: 0;
     box-shadow: none;
     align-self: flex-start;
-  }
+    overflow: hidden;  }
 
   .container .ql-toolbar.ql-snow {
     display: none;
+    overflow: hidden;
   }
 }
 
 
-
-.recent{
-  background-color: #EEEEEE;
-background-image: url(http://www.transparenttextures.com/patterns/cubes.png);
-
-}
+ 

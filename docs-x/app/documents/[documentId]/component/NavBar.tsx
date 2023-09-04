@@ -139,11 +139,13 @@ setInputValue(evt.target.value);
   <div
   className="
   pr-2
- flex
+ md:flex
  flex-row
  items-center
  justify-center
  gap-2
+ hidden
+
   ">
     
     <AvatarGroup max={4}>
@@ -165,7 +167,10 @@ setInputValue(evt.target.value);
      
      <div
      className="
-     ml-2"
+     hidden
+     md:block
+     ml-2
+     "
  >
   
 {isOwner && ( <Button

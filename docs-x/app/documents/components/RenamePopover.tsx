@@ -26,6 +26,7 @@ toast.success('Renamed successfully')
     toast.error('error while renaming')
 }).then(()=>{
     router.refresh();
+    
 })
 }
 const handleChange=(e:any)=>{
@@ -114,7 +115,10 @@ text-gray-600
 
     ">
 <button
-onClick={RenameButton}
+onClick={()=>{
+    RenameButton();
+    close();
+}}
 className="
 hover:bg-green-500
 hover:text-white
