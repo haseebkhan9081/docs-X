@@ -1,3 +1,4 @@
+"use client";
 import { usePopper } from 'react-popper';
 import { Popover,Transition} from '@headlessui/react';
 import { useState,Fragment } from 'react';
@@ -11,6 +12,7 @@ import axios from 'axios';
  
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
+import RenamePopover from './RenamePopover';
 interface OptionsPopoverprops{
   doc?:Document
 } 
@@ -59,10 +61,10 @@ ref={setReferenceElement}>
 </Popover.Button>
 <Transition
 as={Fragment}
-enter="transition ease-out duration-200"
+enter="transition ease-out duration-100"
 enterFrom="opacity-0 translate-y-1"
 enterTo="opacity-100 translate-y-0"
-leave="transition ease-in duration-150"
+leave="transition ease-in duration-50"
 leaveFrom="opacity-100 translate-y-0"
 leaveTo="opacity-0 translate-y-1"
 >
@@ -72,10 +74,10 @@ style={styles.popper}
 {...attributes.popper}>
 <div
 className='
-bg-gray-50
+bg-white
 p-4
- ring-[0.5px]
- ring-gray-300
+ ring-[0.75px]
+ ring-gray-200
  rounded-md
 flex
 flex-col
@@ -86,6 +88,8 @@ justify-start
  <div
  onClick={downloadButton}
  className='
+ border-none
+ outline-none
  flex
  flex-row
  gap-2
@@ -102,6 +106,8 @@ font-medium'>
  <div
  onClick={removeButton}
  className='
+ border-none
+ outline-none
  flex
  flex-row
  gap-2
@@ -116,22 +122,7 @@ text-red-500'>
 </p>
 <AiOutlineDelete color={'red'} size={15}/>
  </div>
- <div
- className='
- flex
- flex-row
- gap-2
- items-center
- justify-between'>
-<p
-className='
-text-sm
-
-font-medium'>
-  Rename
-</p>
- <MdDriveFileRenameOutline size={15}/>
- </div>
+ <RenamePopover id={doc?.id}/>
 </div>
 </Popover.Panel>
 </Transition>

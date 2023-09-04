@@ -91,7 +91,7 @@ const PaperSheet: React.FC<PaperSheetprops> = ({ document }) => {
             ' size={15}/>
             <p className="text-sm
           
-             text-gray-700">{document?.title?.slice(0,15)}</p>
+             text-gray-700">{document?.title?.slice(0,12)+'...'}</p>
              
                 </div>
                 <div

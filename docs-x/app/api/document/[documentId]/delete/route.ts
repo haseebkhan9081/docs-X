@@ -38,7 +38,7 @@ export async function DELETE(
     if(!deletedDocument){
         return new NextResponse('No such document',{status:402});
     }
-    return deletedDocument;
+    return NextResponse.json(deletedDocument);
     
     }
     catch(error:any){

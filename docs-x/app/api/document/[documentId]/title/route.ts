@@ -13,8 +13,6 @@ const documentId=params.documentId;
 const body=await request.json();
 console.log(body);
 const {
-     
-    
     Title
 }=body;
  
